@@ -76,20 +76,39 @@ var root = {
         return userTodosArr;
     },
 
+    //Not Working...
     getActiveTodoForUser:(args) =>{
         let todoArrs = [];
         for (let i = 0; i < userData.length; i++) {
-            if (userData[i].id == args.id) {
+
+            if (userData[i].id != args.id) {
                 continue;
             }
 
+            console.log(userData[i]);
             for (let j = 0; j < todoData.length; i++) {
                 if (todoData[j].userid == userData[i].id && todoData[i].done) {
-                    todoArrs.push(todoData[j]);
+                    let date = new Date(todoData[i].targetDate);
+                    let currentDate = new Date();
+                    var tomorrow = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1);
+                    if(
+                        (
+                            date.getFullYear() == currentDate.getFullYear() 
+                            && date.getMonth() == currentDate.getMonth()
+                            && date.getDate() == currentDate.getDate()
+                        ) || 
+                        (
+                            date.getFullYear() == tomorrow.getFullYear() 
+                            && date.getMonth() == tomorrow.getMonth()
+                            && date.getDate() == tomorrow.getDate()
+                        )
+                        )
+                    {
+                            todoArrs.push(todoData[j]);
+                    }
                 }
             }
         }
-
         return todoArrs;
     }
 };
