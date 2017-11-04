@@ -1,0 +1,29 @@
+[
+    {
+        "id": "1",
+        "fName" : "Prabodh",
+        "lName" : "Meshram",
+        "email": "prabodh@example.com",
+        "pinCode" : "11111",
+        "birthDate" : "20-APR-1990",
+        "isActive" : true
+    },
+    {
+        "id": 2,
+        "fName" : "Rajiv",
+        "lName" : "Khanduri",
+        "email": "rajiv@example.com",
+        "pinCode" : "2222",
+        "birthDate" : "12-JAN-1990",
+        "isActive" : true
+    },
+    {
+        "id": 3,
+        "fName" : "Prajwal",
+        "lName" : "Ak",
+        "email": "prajwal@example.com",
+        "pinCode" : "333",
+        "birthDate" : "13-MAR-1990",
+        "isActive" : false
+    }
+]

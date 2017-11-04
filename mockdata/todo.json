@@ -1,0 +1,23 @@
+[
+    {
+        "id" : "abcd123",
+        "userid" : "1",
+        "text" : "Some Todo Details",
+        "done" : true,
+        "targetDate" : "20-01-2016"
+    },
+    {
+        "id" : "abcd123",
+        "userid" : "1",
+        "text" : "Some other Details",
+        "done" : true,
+        "targetDate" : "10-01-2013"
+    },
+    {
+        "id" : "abcd123",
+        "userid" : "2",
+        "text" : "tldr",
+        "done" : true,
+        "targetDate" : "20-01-2016"
+    }
+]
