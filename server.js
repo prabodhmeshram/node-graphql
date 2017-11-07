@@ -64,10 +64,10 @@ var root = {
             }
             let userTodoObj = {};
             userTodoObj.user = userData[i];
-            userTodoObj.todo = [];
-            for(let j=0; j < todoData.length; i++){
+            userTodoObj.todos = [];
+            for(let j=0; j < todoData.length; j++){
                 if(todoData[j].userid == userData[i].id){
-                    userTodoObj.todo.push(todoData[j]);
+                    userTodoObj.todos.push(todoData[j]);
                 }
             }
             userTodosArr.push(userTodoObj);
