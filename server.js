@@ -5,6 +5,20 @@ var fs = require('fs');
 
 const userData  = JSON.parse(fs.readFileSync('mockdata/user.json', 'utf8'));
 const todoData  = JSON.parse(fs.readFileSync('mockdata/todo.json', 'utf8'));
+const MONTHMAP = {
+    "JAN" : 0,
+    "FEB" : 1,
+    "MAR" : 2,
+    "APR" : 3,
+    "MAY" : 4,
+    "JUN" : 5,
+    "JUL" : 6,
+    "AUG" : 7,
+    "SEP" : 8,
+    "OCT" : 9,
+    "NOV" : 10,
+    "DEC" : 11
+};
 
 var schema = buildSchema(`
   type Query {
@@ -85,12 +99,13 @@ var root = {
                 continue;
             }
 
-            console.log(userData[i]);
-            for (let j = 0; j < todoData.length; i++) {
-                if (todoData[j].userid == userData[i].id && todoData[i].done) {
-                    let date = new Date(todoData[i].targetDate);
+            for (let j = 0; j < todoData.length; j++) {
+                if (todoData[j].userid == userData[i].id && todoData[j].done) {
+                    let dateFragments = todoData[j].targetDate.split("-");
+
+                    let date = new Date(dateFragments[2], MONTHMAP[dateFragments[1]],dateFragments[0]);
                     let currentDate = new Date();
-                    var tomorrow = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1);
+                    var tomorrow = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1);
                     if(
                         (
                             date.getFullYear() == currentDate.getFullYear() 
