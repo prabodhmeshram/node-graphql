@@ -16,4 +16,4 @@ There are basically four API's
 * getUserForId -- Working
 * getTodoForId -- Working
 * getAllActiveUsersAndTheirTodos -- Working    
-* getActiveTodoForUser -- Not Working.
+* getActiveTodoForUser -- Working.
