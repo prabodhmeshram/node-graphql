@@ -1,4 +1,4 @@
-# node-graphql
+# Node Graphql
 
 IT is implementation of Graphql using Node
 
